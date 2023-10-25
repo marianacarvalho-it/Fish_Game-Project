@@ -1,0 +1,104 @@
+body {
+  padding: 0;
+  text-align: center;
+  margin: 5px;
+}
+
+#game-intro {
+  padding: 20px 0px;
+}
+
+#game-container {
+  padding: 20px 0px;
+  justify-content: center;
+  text-align: center;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-around; 
+
+  border-radius: 5px;
+  margin-bottom: 5px;
+  height: 100px;
+  width: 1100px;
+  margin-left:50px;
+  margin-right:50px;
+  background-color:grey;
+  padding: 50 50px;
+  align-content: center;
+  height:  50px;
+}
+
+.stat .pp {
+  justify-content: space-evenly; 
+  font-display: flex;
+  display: flex;
+  color: #fff;
+  font-size: 18px;
+}
+
+#game-screen {
+  display: none;
+  align-content: center;
+  padding: 20px 0px;
+  overflow: hidden;
+  position: relative;
+  background-image: url(../images/fundodomar2.webp);
+
+  width: 1100px; /* Set the width of your image */
+  height: 450px; /* Set the height of your image */
+  animation: slide 10s linear infinite; /* Adjust the duration (5s) and animation name (horizontalLoop) as needed */
+  white-space: nowrap;
+  overflow: hidden;
+
+  margin-left:50px;
+  margin-right: 50px;
+  border-radius: 5px;
+}
+
+@keyframes slide {
+  0% {
+    background-position: 1000px 0;
+  }
+  100% {
+    background-position: 200 0;
+  }
+}
+
+#game-end {
+  display: none;
+}
+
+.game-over {
+  display: none;
+  background-image: url(https://media.gettyimages.com/id/165601965/pt/vetorial/peixes-mortos.jpg?s=612x612&w=0&k=20&c=_qfsytav_2rGgMJMs43ISwHuAqZYQ0-MG676DLIa4ys=);
+}
+
+.game-intro p {
+  font-size: 18px;
+  font-family: "Verdana";
+  display: flex; 
+}
+
+.logo-img {
+  width: 300px;
+}
+
+.arrows-img {
+  width: 125px;
+}
+
+body button {
+  font-size: 25px;
+  background-color:  #008080 ;
+  color: #fff;
+  padding: 20px 40px;
+  border: 0;
+  box-shadow: 0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
