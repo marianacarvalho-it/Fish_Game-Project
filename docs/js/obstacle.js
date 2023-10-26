@@ -7,7 +7,7 @@ class Obstacle {
         this.height = 125;
         this.element = document.createElement("img");
         
-        const imageSources =[ "docs\images\garbage1.png", "docs\images\garbage0.png","docs\images\garbage3.png"]
+        const imageSources =["docs\images\garbage1.png","docs\images\garbage0.png","docs\images\garbage3.png"];
 
         const randomIndex = Math.floor(Math.random() * imageSources.length);
         const selectedImageSrc = imageSources[randomIndex];
@@ -20,7 +20,7 @@ class Obstacle {
         this.element.style.top = `${this.top-20}px`;
         this.element.style.position = "absolute";
         
-        this.gameScreen.appendChild(this.element)
+        this.gameScreen.appendChild(this.element);
     }
 
     updatePosition(){

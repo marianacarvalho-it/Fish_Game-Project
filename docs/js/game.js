@@ -58,7 +58,7 @@ class Game {
             // Start the Game
             this.gameLoop();
 
-            const audio0 = new Audio("docs\sound/underwater-ambience-6201.mp3");
+            const audio0 = new Audio("docs\sound/underwater.mp3");
             audio0.loop = true; // Set the loop property to true to play the audio in a loop
             audio0.play();
         }
