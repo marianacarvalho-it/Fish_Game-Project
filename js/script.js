@@ -1,12 +1,12 @@
 window.onload = function () {
   //const startButton = document.getElementById("start-button");
-
   const player1Image = document.getElementById("player1");
   const player2Image = document.getElementById("player2");
   const restartButton = document.getElementById("restart-button");
 
 
-  
+/*   let stat = document.getElementById("stat");
+            stat.style.display = "none"; */
 
   let game;
 
@@ -21,6 +21,10 @@ window.onload = function () {
   });
 }
 
+restartButton.addEventListener("click", function () {
+  restartGame();
+});
+
   /*choosePlayerButton.addEventListener("click", function () {
     // Hide the "Choose Player" button and show the player images
     choosePlayerButton.style.display = "none";
@@ -31,13 +35,6 @@ window.onload = function () {
   /*startButton.addEventListener("click", function () {
     startGame();
   });*/
-
-
-
-
-  restartButton.addEventListener("click", function () {
-    restartGame();
-  });
 
   /*player1Image.addEventListener("click", function () {
     player1Image.style.display = "block";

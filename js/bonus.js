@@ -6,11 +6,8 @@ class Bonus {
         this.width = 65
         this.height = 105;
         this.element = document.createElement("img");
-
-
         
         const imageSources =["./images/food2.png","./images/food5.png"]
-
 
         const randomIndex = Math.floor(Math.random() * imageSources.length);
         const selectedImageSrc = imageSources[randomIndex];
@@ -31,7 +28,5 @@ class Bonus {
     move(){
         this.top +=3;
         this.updatePosition();
-    }
-    
+    }    
 }
-

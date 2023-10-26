@@ -5,15 +5,28 @@ body {
 }
 
 #game-intro {
-  padding: 20px 0px;
+  padding: 0px 5px;
+  
+}
+.logo-img{
+  background-image:image("../images/Intro.png"); 
+}
+
+#game-intro .stat{
+  
 }
 
 #game-container {
   padding: 0px 0px;
   justify-content: center;
   text-align: center;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 15px;
+  margin-right: 15px;
+  /* display: none; //it doesn't work*/
+}
+
+#game-intro .stat{
+  display: none;
 }
 
 .stat {
@@ -30,6 +43,7 @@ body {
   padding: 50 50px;
   align-content: center;
   height:  50px;
+  display: none;
 }
 
 .stat .pp {
@@ -78,10 +92,15 @@ body {
   background-image: url(https://media.gettyimages.com/id/165601965/pt/vetorial/peixes-mortos.jpg?s=612x612&w=0&k=20&c=_qfsytav_2rGgMJMs43ISwHuAqZYQ0-MG676DLIa4ys=);
 }
 
-.game-intro p {
-  font-size: 18px;
+.game-intro p { /*letter format (score, live and level)*/
+  font-size: 52px;
   font-family: "Verdana";
   display: flex; 
+  
+}
+
+.game-intro .stat{
+  
 }
 
 .logo-img {
@@ -96,10 +115,23 @@ body button {
   font-size: 25px;
   background-color:  #008080 ;
   color: #fff;
-  padding: 20px 40px;
+  padding: 10px 30px;
   border: 0;
   box-shadow: 0;
   border-radius: 5px;
   margin-bottom: 20px;
+  margin-top: 20px;
   flex-direction: column;
+}
+
+#footer{
+  display: flex;
+  justify-content:space-around; 
+  font-size:14px;
+  font-family: "Verdana";
+  
+}
+
+.logo-footer {
+  width: 50px;
 }

@@ -6,7 +6,7 @@ class Obstacle {
         this.width = 75
         this.height = 125;
         this.element = document.createElement("img");
-      
+        
         const imageSources =[ "../images/garbage1.png", "../images/garbage0.png","../images/garbage3.png"]
 
         const randomIndex = Math.floor(Math.random() * imageSources.length);

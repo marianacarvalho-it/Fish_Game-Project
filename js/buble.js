@@ -6,7 +6,7 @@ class Bubble {
         this.width = 100
         this.height = 180;
         this.element = document.createElement("img");
-      
+        
         this.element.src = "./images/BOLHAS.png";
         this.element.style.width = `${this.width}px`;
         this.element.style.height = `${this.height}px`;

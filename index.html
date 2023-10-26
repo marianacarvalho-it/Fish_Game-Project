@@ -13,27 +13,22 @@
       <div id="game-intro">
         <img src="../images/Intro.png" alt="" class="logo-img" />
         <br />
-
         <button id="choose-player">Choose Player</button>
-
-        <div>
-        <img id = "player1" img src = "../images/peixe1.png" height="65px">  </img>
-        <img id = "player2" img src = "./images/peixe2.png" height="65px">  </img>
-       </div>
-
+        <div id="players" class="players-img">
+        <img id = "player1" img src = "../images/peixe1.png" alt="" height="65px">  </img>
+        <img id = "player2" img src = "./images/peixe2.png" alt="" height="65px">  </img>
+        </div>
         <button id="start-button">Press the fish to Start the Game</button>
-
         <p>Use the arrows to control the fish!</p>
-        <img src="./images/arrows_keyboard.jpeg" alt="" class="arrows-img" />
+        <img src="./images/arrows_keyboard.png" alt="" class="arrows-img" />
+
       </div>
 
       <div id="game-container">
-        <div class="stat">
-            <div><p class="pp"> Score: <span id="score">0</span></p></div>
-              <div><p class="pp">Lives: <span id="lives">3</span></p></div>
-              <div><p class="pp">level: <span id="level">1</span></p></div>
-             
-        
+        <div id="stat" class="stat">
+            <div><p class="pp">Score: <span id="score">0</span></p></div>
+            <div><p class="pp">Lives: <span id="lives">3</span></p></div>
+            <div><p class="pp">Level: <span id="level">1</span></p></div>
         </div>
         <!-- #game-screen is initially hidden using CSS style display: none -->
         <div id="game-screen"></div>
@@ -44,26 +39,24 @@
         <img src=" https://media.gettyimages.com/id/165601965/pt/vetorial/peixes-mortos.jpg?s=612x612&w=0&k=20&c=_qfsytav_2rGgMJMs43ISwHuAqZYQ0-MG676DLIa4ys=" alt="" class="logo-img" />
         <h1 class ="Game-over">Game Over</h1>
 
-
         <audio controls style="display: none">
           <source src="./sound/mixkit-funny-fail-low-tone-2876.wav" type="audio/wav">
           Your browser does not support the audio element.
         </audio>
-        
         <br />
         <button id="restart-button">Restart</button>
       </div>
+      <footer>
+        <div id="footer" >
+          <img src="/images/ironhack.png"alt="" class="logo-footer"/>
+          <p>Developed by André Gomes and Mariana Carvalho</p>
+        </div>
+      </footer>
     </main>
-
     <script type="text/javascript" src="js/bonus.js"></script>
     <script type="text/javascript" src="js/obstacle2.js"></script>
-    <script type="text/javascript" src="js/Vida"></script>
+    <script type="text/javascript" src="js/vida"></script>
     <script type="text/javascript" src="js/buble.js"></script>
-
-
-
-    
-
     <script type="text/javascript" src="js/obstacle.js"></script>
     <script type="text/javascript" src="js/player.js"></script>
     <script type="text/javascript" src="js/game.js"></script>

@@ -11,8 +11,7 @@ class Game {
         
         this.imgFish1;
         this.imgFish2;
-        
-        
+                
         this.height = 500; // <-- could be directly in px, but makes it hard to use them later if we want to create some game logic
         this.width = 1100;
 
@@ -31,14 +30,8 @@ class Game {
         this.loadinglive = false;
         this.loadingbubbles = false
         this.level =1;
-        
         //this.x = 0
-
-     }
-
-
-   
-
+    }
 
         /*let fish =[1,2]
         if (fish[0] === 1) {
@@ -46,8 +39,7 @@ class Game {
         } else {
             this.imgFish="../images/peixe1.png"
         }*/
-    
-    
+        
         start(){
             // Define height and width of game screen
             //this.pickPlayer()
@@ -57,22 +49,18 @@ class Game {
             this.startScreen.style.display = "none";    // visibility property also duable, but display is better
             // Show the Game Screen
             this.gameScreen.style.display = "block";
+            
+            let  footer = document.getElementById("footer");
+            footer.style.display = "none";
+            
+            let bar = document.querySelector(".stat")
+            bar.style.display = "block";
             // Start the Game
             this.gameLoop();
 
-           
             const audio0 = new Audio('../sound/underwater-ambience-6201.mp3');
             audio0.loop = true; // Set the loop property to true to play the audio in a loop
             audio0.play();
-
-
-
-
-
-
-
-
-
         }
 
     gameLoop(){
@@ -99,7 +87,6 @@ class Game {
                 this.lives--;
                 if(this.lives>=1){
                 const audio5 = new Audio(['../sound/icq-old-sound.mp3']);
-
                 audio5.play([0])
                 audio5.volume = 0.1
             } 
@@ -108,10 +95,8 @@ class Game {
                 this.score++;
                 obstacle.element.remove();
                 this.obstacles.splice(i, 1);
-            }
-        
+            }        
         }
-
 
                 // Check for Collision with Bonuses
 
@@ -123,124 +108,98 @@ class Game {
                 bonus.element.remove();
                 this.bonusES.splice(j, 1);
                 this.score ++ ; //
-
                 
                     const audio5 = new Audio(['../sound/message-incoming-132126.mp3']);
     
                     audio5.play([0])
                     audio5.volume = 0.8
-                
-
-
 
             } else if(bonus.top > this.height) {
                 bonus.element.remove();
                 this.bonusES.splice(j, 1); //
-            }
-                        
+            }                        
         }
                     //// check for colision obstaculo2
 
-                    for (let k = 0; k < this.obstacles2.length; k++) {
-                        const obstacle2 = this.obstacles2[k];
-                        obstacle2.move();
-                
-                        if (this.player.didCollide(obstacle2)) {
-                            obstacle2.element.remove();
-                            this.obstacles2.splice(k, 1);
-                            this.lives --;
+        for (let k = 0; k < this.obstacles2.length; k++) {
+            const obstacle2 = this.obstacles2[k];
+            obstacle2.move();
+    
+            if (this.player.didCollide(obstacle2)) {
+                obstacle2.element.remove();
+                this.obstacles2.splice(k, 1);
+                this.lives --;
 
-                            const audio3 = new Audio(['../sound/obstacle2.mp3']);
+                const audio3 = new Audio(['../sound/obstacle2.mp3']);
+                audio3.play([0])
 
-                            audio3.play([0])
-
-                        } else if(obstacle2.top > this.height) {
-                            obstacle2.element.remove();
-                            this.obstacles2.splice(k, 1); //
-                        }
-  
-                    }
+            } else if(obstacle2.top > this.height) {
+                obstacle2.element.remove();
+                this.obstacles2.splice(k, 1); //
+            }
+        }
 
 ////////////////////////////check for colision extra lives///////////
 
-                    for (let q = 0; q < this.Extralives.length; q++) {
-                        const ELive = this.Extralives[q];
-                        ELive.move();
-                
-                        if (this.player.didCollide(ELive)) {
-                            ELive.element.remove();
-                            this.Extralives.splice(q, 1);
-                            this.lives ++;
+        for (let q = 0; q < this.Extralives.length; q++) {
+            const ELive = this.Extralives[q];
+            ELive.move();
+    
+            if (this.player.didCollide(ELive)) {
+                ELive.element.remove();
+                this.Extralives.splice(q, 1);
+                this.lives ++;
 
 
-                            const audio3 = new Audio(['../sound/extra life.mp3']);
-
-                            audio3.play([0])
-                    
-
-                        } else if(ELive.top > this.height) {
-                            ELive.element.remove();
-                            this.Extralives.splice(q, 1); //
-                        }
-  
-                    }
+                const audio3 = new Audio(['../sound/extra life.mp3']);
+                audio3.play([0])
+        } 
+        else if(ELive.top > this.height) {
+                ELive.element.remove();
+                this.Extralives.splice(q, 1); //
+            }
+        }
 
                     ////////////////////////////check for colision bubble
 
-                    for (let w = this.bubbles.length-1; w >= 0; w--) {
-                        const bubble = this.bubbles[w];
-                        bubble.move();
-                    
-                        if (this.player.didCollide(bubble)) {
-                            bubble.element.remove();
-                            this.bubbles.splice(w, 1);
+        for (let w = this.bubbles.length-1; w >= 0; w--) {
+            const bubble = this.bubbles[w];
+            bubble.move();
+        
+            if (this.player.didCollide(bubble)) {
+                bubble.element.remove();
+                this.bubbles.splice(w, 1);
 
-                            const audio3 = new Audio(['../sound/mixkit-deep-water-bubbles-1321.wav']);
+                const audio3 = new Audio(['../sound/mixkit-deep-water-bubbles-1321.wav']);
+                audio3.play([0])
+                audio3.volume = 1
 
-                            audio3.play([0])
-                            audio3.volume = 1
+                // Create an image element and set its attributes
+                const img = new Image();
+                img.src = 'images/FUNDO pRETO.png';
+                img.style.opacity = '0.7';
+                img.style.backgroundSize = "cover";
+                
+                // Append the image to a specific element in the document
+                // Replace 'container' with the appropriate container element
+                const containerIMG = document.getElementById("game-screen"); // Replace with your container element's ID
+                containerIMG.appendChild(img);
+        
+                setTimeout(() => {
+                    img.remove();
+                }, 5000); 
 
-
-
-                            // Create an image element and set its attributes
-                            const img = new Image();
-                            img.src = 'images/FUNDO pRETO.png';
-                            img.style.opacity = '0.7';
-                            img.style.backgroundSize = "cover";
-                            
-                    
-                            // Append the image to a specific element in the document
-                            // Replace 'container' with the appropriate container element
-                            const containerIMG = document.getElementById("game-screen"); // Replace with your container element's ID
-                            containerIMG.appendChild(img);
-                    
-                            setTimeout(() => {
-                                img.remove();
-                            }, 5000); 
-
-                        } else if (bubble.top <0) {
-                            bubble.element.remove();
-                            this.bubbles.splice(w, 1);
-                        }
-
-                       
-                    }
-                    
-
-
-
-
-
-
-
-
+            } else if (bubble.top <0) {
+                bubble.element.remove();
+                this.bubbles.splice(w, 1);
+            }
+        }
 
         if (this.lives === 0) {
             this.endGame();
         }
     
         let level = document.getElementById("level");
-
 
         // Update the level
         if (this.score > 10 && this.score <= 11) {
@@ -255,13 +214,11 @@ class Game {
             this.level = 5;
         }
 
-    
         level.innerHTML = this.level;
         
-    
         if (!this.obstacles.length && !this.loadingObstacle) {
             this.loadingObstacle = true;
-           
+
             setTimeout(() => {
                 this.obstacles.push(new Obstacle(this.gameScreen));
                 this.loadingObstacle = false;
@@ -278,107 +235,74 @@ class Game {
             //////obstaculo 2
 
 
-            if (!this.obstacles2.length && !this.loadingObstacle2 && this.level >= 2 && this.level<3) {
-                this.loadingObstacle2 = true;
+        if (!this.obstacles2.length && !this.loadingObstacle2 && this.level >= 2 && this.level<3) {
+            this.loadingObstacle2 = true;
 
-                setTimeout(() => {
-                    this.obstacles2.push(new Obstacle2(this.gameScreen));
-                    this.loadingObstacle2 = false;
-                }, 500)
+            setTimeout(() => {
+                this.obstacles2.push(new Obstacle2(this.gameScreen));
+                this.loadingObstacle2 = false;
+            }, 500)
+        }
+
+        if (!this.obstacles2.length && !this.loadingObstacle2 && this.level >= 3) {
+            this.loadingObstacle2 = true;
+        
+            // Create and push a new Obstacle2
+
+            const newObstacle2 = new Obstacle2(this.gameScreen);
+            this.obstacles2.push(newObstacle2);
             
-                
-                }
-
-                if (!this.obstacles2.length && !this.loadingObstacle2 && this.level >= 3) {
-                    this.loadingObstacle2 = true;
-                
-                    // Create and push a new Obstacle2
-
-                    const newObstacle2 = new Obstacle2(this.gameScreen);
-                    this.obstacles2.push(newObstacle2);
-                    
-                    setTimeout(() => {
-                            const index1 = this.obstacles2.indexOf(newObstacle2);
-                            if (index1 !== -1) {
-                                this.obstacles2.splice(index1, 1);
-                                newObstacle2.element.remove();
-                            }
-                            this.loadingObstacle2 = false; 
-                        }, 4500); 
+            setTimeout(() => {
+                    const index1 = this.obstacles2.indexOf(newObstacle2);
+                    if (index1 !== -1) {
+                        this.obstacles2.splice(index1, 1);
+                        newObstacle2.element.remove();
                     }
+                    this.loadingObstacle2 = false; 
+                }, 4500); 
+            }
 
-                
-            
-            
-
-
-               /* setTimeout(() => {
+                /* setTimeout(() => {
                     this.obstacles2.push(new Obstacle2(this.gameScreen));
                     this.loadingObstacle2 = false;
                 }, 500);*/
         
-
-
             ////////////EXTRA LIVE//////////////////
 
-
-            if (!this.Extralives.length && !this.loadinglive&&this.level>=3) {
-                this.loadinglive = true;
-            
-                // Create the object and add it to Extralives
-                const newVida = new Vida(this.gameScreen);
-                this.Extralives.push(newVida);
-            
-                // Schedule its removal after 2 seconds
-                setTimeout(() => {
-                    // Remove the object from Extralives and the DOM
-                    const index = this.Extralives.indexOf(newVida);
-                    if (index !== -1) {
-                        this.Extralives.splice(index, 1);
-                        newVida.element.remove();
-                    }
-                    this.loadinglive = false; // Reset the flag
-                }, 5500); // 2000 milliseconds = 2 seconds
-            }
-            
-            
-            
-                    //////////last obstacle buble////////////////
-
-            
-                                  
-            if (!this.bubbles.length && !this.loadingbubbles&&this.level >= 4) {
-                this.loadingbubbles = true;
-
-                 setTimeout(() => {
-                    this.bubbles.push(new Bubble(this.gameScreen));
-                    this.loadingbubbles = false;
-                }, 50);
-            }
-            
-
-
-
-
-            
-
-        }
-
-
-
-
-
-
-
-
-
-
+        if (!this.Extralives.length && !this.loadinglive&&this.level>=3) {
+            this.loadinglive = true;
         
+            // Create the object and add it to Extralives
+            const newVida = new Vida(this.gameScreen);
+            this.Extralives.push(newVida);
+        
+            // Schedule its removal after 2 seconds
+            setTimeout(() => {
+                // Remove the object from Extralives and the DOM
+                const index = this.Extralives.indexOf(newVida);
+                if (index !== -1) {
+                    this.Extralives.splice(index, 1);
+                    newVida.element.remove();
+                }
+                this.loadinglive = false; // Reset the flag
+            }, 5500); // 2000 milliseconds = 2 seconds
+        }
+            
+            
+            //////////last obstacle buble////////////////
+            
+        if (!this.bubbles.length && !this.loadingbubbles&&this.level >= 4) {
+            this.loadingbubbles = true;
 
+                setTimeout(() => {
+                this.bubbles.push(new Bubble(this.gameScreen));
+                this.loadingbubbles = false;
+            }, 50);
+        }
+    }
 
          //////////////////////////////////////////////
 
-    
         let score = document.getElementById("score");
         let lives = document.getElementById("lives");
     
@@ -396,10 +320,6 @@ class Game {
         this.gameEndScreen.style.display = "block";
 
         const audio5 = new Audio(['../sound/mixkit-funny-fail-low-tone-2876.wav']);
-
         audio5.play([0])
-
-
-        
     }
 }    
