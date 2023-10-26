@@ -76,6 +76,9 @@ body {
   border-radius: 5px;
 }
 
+#player1 {
+  margin-right: 20px;
+}
 #players img:hover {
 cursor: grab;
 }
