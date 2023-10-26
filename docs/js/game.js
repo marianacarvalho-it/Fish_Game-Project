@@ -58,7 +58,7 @@ class Game {
             // Start the Game
             this.gameLoop();
 
-            const audio0 = new Audio('../sound/underwater-ambience-6201.mp3');
+            const audio0 = new Audio("docs/sound/underwater-ambience-6201.mp3");
             audio0.loop = true; // Set the loop property to true to play the audio in a loop
             audio0.play();
         }
@@ -176,7 +176,7 @@ class Game {
 
                 // Create an image element and set its attributes
                 const img = new Image();
-                img.src = 'images/FUNDO pRETO.png';
+                img.src = "docs/images/FUNDO pRETO.png";
                 img.style.opacity = '0.7';
                 img.style.backgroundSize = "cover";
                 
