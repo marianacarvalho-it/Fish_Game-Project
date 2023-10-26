@@ -13,7 +13,7 @@ body {
   font-family: "Verdana";
 }
 .logo-img{
-  background-image:url("../images/Intro.png"); 
+  background-image:url("docs\images\Intro.png"); 
 }
 
 #game-container {
