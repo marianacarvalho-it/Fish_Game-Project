@@ -7,7 +7,7 @@ class Obstacle2 {
         this.height = 120;
         this.element = document.createElement("img");
 
-        this.element.src = "docs\images\obstaculo2.png";
+        this.element.src = "docs/images/obstaculo2.png";
         this.element.style.width = `${this.width}px`;
         this.element.style.height = `${this.height}px`;
         this.element.style.left = `${this.left}px`;
