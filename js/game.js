@@ -13,7 +13,7 @@ class Game {
         this.imgFish2;
         
         
-        this.height = 450; // <-- could be directly in px, but makes it hard to use them later if we want to create some game logic
+        this.height = 500; // <-- could be directly in px, but makes it hard to use them later if we want to create some game logic
         this.width = 1100;
 
         this.obstacles = [];  
@@ -23,14 +23,14 @@ class Game {
         this.bubbles =[]
         
         this.score = 0;
-        this.lives = 30;
+        this.lives = 3;
         this.gameIsOver = false;
         this.loadingObstacle = false;
         this.loadingObstacle2 = false;
         this.loadingBonus = false;
         this.loadinglive = false;
         this.loadingbubbles = false
-        this.level = 4;
+        this.level =1;
         
         //this.x = 0
 
@@ -161,7 +161,7 @@ class Game {
   
                     }
 
-////////////////////////////check for colision extra lives
+////////////////////////////check for colision extra lives///////////
 
                     for (let q = 0; q < this.Extralives.length; q++) {
                         const ELive = this.Extralives[q];
@@ -205,7 +205,7 @@ class Game {
                             // Create an image element and set its attributes
                             const img = new Image();
                             img.src = 'images/FUNDO pRETO.png';
-                            img.style.opacity = '0.8';
+                            img.style.opacity = '0.7';
                             img.style.backgroundSize = "cover";
                             
                     

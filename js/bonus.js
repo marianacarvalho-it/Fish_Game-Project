@@ -3,8 +3,8 @@ class Bonus {
         this.gameScreen = gameScreen;
         this.left = Math.floor(Math.random() * 1000 + 70);  
         this.top = 0;
-        this.width = 75
-        this.height = 125;
+        this.width = 65
+        this.height = 105;
         this.element = document.createElement("img");
 
 
