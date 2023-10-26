@@ -11,9 +11,9 @@ class Player {  // the game "calls" the player
         //this.imgSrc= "../images/peixe2.png"
         this.color = color;
         if(color === "blue"){
-            this.element.src = "./images/peixe1.png";
+            this.element.src = "docs\images\peixe1.png";
         } else {
-            this.element.src = "./images/peixe2.png";
+            this.element.src = "docs\images\peixe2.png";
         }
         this.element.style.position = "absolute"; // clear values for the movement
         // set some default values

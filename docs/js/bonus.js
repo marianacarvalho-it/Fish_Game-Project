@@ -7,7 +7,7 @@ class Bonus {
         this.height = 105;
         this.element = document.createElement("img");
         
-        const imageSources =["./images/food2.png","./images/food5.png"]
+        const imageSources =["docs\images\food2.png","docs\images\food5.png"]
 
         const randomIndex = Math.floor(Math.random() * imageSources.length);
         const selectedImageSrc = imageSources[randomIndex];

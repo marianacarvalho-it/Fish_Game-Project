@@ -7,7 +7,7 @@ class Obstacle {
         this.height = 125;
         this.element = document.createElement("img");
         
-        const imageSources =[ "../images/garbage1.png", "../images/garbage0.png","../images/garbage3.png"]
+        const imageSources =[ "docs\images\garbage1.png", "docs\images\garbage0.png","docs\images\garbage3.png"]
 
         const randomIndex = Math.floor(Math.random() * imageSources.length);
         const selectedImageSrc = imageSources[randomIndex];

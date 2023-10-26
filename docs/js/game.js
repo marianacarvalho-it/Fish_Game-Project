@@ -58,7 +58,7 @@ class Game {
             // Start the Game
             this.gameLoop();
 
-            const audio0 = new Audio("docs/sound/underwater-ambience-6201.mp3");
+            const audio0 = new Audio("docs\sound/underwater-ambience-6201.mp3");
             audio0.loop = true; // Set the loop property to true to play the audio in a loop
             audio0.play();
         }
@@ -86,7 +86,7 @@ class Game {
                 this.obstacles.splice(i, 1);
                 this.lives--;
                 if(this.lives>=1){
-                const audio5 = new Audio(['../sound/icq-old-sound.mp3']);
+                const audio5 = new Audio(['docs\sound\icq-old-sound.mp3']);
                 audio5.play([0])
                 audio5.volume = 0.1
             } 
@@ -109,7 +109,7 @@ class Game {
                 this.bonusES.splice(j, 1);
                 this.score ++ ; //
                 
-                    const audio5 = new Audio(['../sound/message-incoming-132126.mp3']);
+                    const audio5 = new Audio(['docs\sound\message-incoming-132126.mp3']);
     
                     audio5.play([0])
                     audio5.volume = 0.8
@@ -130,7 +130,7 @@ class Game {
                 this.obstacles2.splice(k, 1);
                 this.lives --;
 
-                const audio3 = new Audio(['../sound/obstacle2.mp3']);
+                const audio3 = new Audio(['docs\sound\obstacle2.mp3']);
                 audio3.play([0])
 
             } else if(obstacle2.top > this.height) {
@@ -151,7 +151,7 @@ class Game {
                 this.lives ++;
 
 
-                const audio3 = new Audio(['../sound/extra life.mp3']);
+                const audio3 = new Audio(['docs\sound\extra life.mp3']);
                 audio3.play([0])
         } 
         else if(ELive.top > this.height) {
@@ -170,13 +170,13 @@ class Game {
                 bubble.element.remove();
                 this.bubbles.splice(w, 1);
 
-                const audio3 = new Audio(['../sound/mixkit-deep-water-bubbles-1321.wav']);
+                const audio3 = new Audio(['docs\sound\mixkit-deep-water-bubbles-1321.wav']);
                 audio3.play([0])
                 audio3.volume = 1
 
                 // Create an image element and set its attributes
                 const img = new Image();
-                img.src = "docs/images/FUNDO pRETO.png";
+                img.src = "docs\images\FUNDO pRETO.png";
                 img.style.opacity = '0.7';
                 img.style.backgroundSize = "cover";
                 
@@ -319,7 +319,7 @@ class Game {
         this.gameScreen.style.display = "none";
         this.gameEndScreen.style.display = "block";
 
-        const audio5 = new Audio(['../sound/mixkit-funny-fail-low-tone-2876.wav']);
+        const audio5 = new Audio(['docs\sound\mixkit-funny-fail-low-tone-2876.wav']);
         audio5.play([0])
     }
 }    

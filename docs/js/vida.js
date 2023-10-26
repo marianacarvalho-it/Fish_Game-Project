@@ -7,7 +7,7 @@ class Vida {
         this.height = 110;
         this.element = document.createElement("img");
 
-        this.element.src = "./images/Extra_live.png";
+        this.element.src = "docs\images\Extra_live.png";
         this.element.style.width = `${this.width}px`;
         this.element.style.height = `${this.height}px`;
         this.element.style.left = `${this.left}px`;
