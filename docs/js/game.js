@@ -54,7 +54,8 @@ class Game {
             footer.style.display = "none";
             
             let bar = document.querySelector(".stat")
-            bar.style.display = "block";
+            bar.style.display = "flex";
+
             // Start the Game
             this.gameLoop();
 
