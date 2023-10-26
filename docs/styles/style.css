@@ -76,6 +76,10 @@ body {
   border-radius: 5px;
 }
 
+#players img:hover {
+cursor: grab;
+}
+
 @keyframes slide {
   0% {
     background-position: 1000px 0;
